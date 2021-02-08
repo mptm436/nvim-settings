@@ -2,7 +2,8 @@
 let g:coc_global_extensions = [ 
       \'coc-marketplace', 
       \'coc-json', 
-      \'coc-pyright', 
+      \'coc-python',
+      \'coc-pyright',
       \'coc-snippets', 
       \'coc-tsserver',
       \'coc-css',
@@ -60,8 +61,6 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> <LEADER>a <Plug>(coc-diagnostic-next-error)
-nmap <silent> <LEADER>A <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)

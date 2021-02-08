@@ -24,8 +24,6 @@ if empty(glob('~/.config/nvim/machine_specific.vim'))
   let has_machine_specific_file = 0
   silent! exec "!cp ~/.config/nvim/default_configs/machine_specific_default.vim ~/.config/nvim/machine_specific.vim"
 endif
-source $HOME/.config/nvim/machine_specific.vim
-
 
 
 " ==========================
@@ -48,7 +46,6 @@ let g:terminal_color_11 = '#F4F99D'
 let g:terminal_color_12 = '#CAA9FA'
 let g:terminal_color_13 = '#FF92D0'
 let g:terminal_color_14 = '#9AEDFE'
-let g:PYTHONUNBUFFERED=1
 
 
 " ====================
@@ -78,6 +75,8 @@ source $HOME/.config/nvim/vim-plugs/plugins.vim
 " === Plugin Configurations ===
 " =============================
 
+" === SpaceVimDark
+source $HOME/.config/nvim/plug-configs/space-vim-dark.vim
 " === Ranger
 source $HOME/.config/nvim/plug-configs/rnvimr.vim
 " === NERD Tree
@@ -116,13 +115,10 @@ source $HOME/.config/nvim/plug-configs/asyncrun.vim
 " === csv
 source $HOME/.config/nvim/plug-configs/csv.vim
 
-" === UndoTree
-" default key mapping <S-l> or L
 
 " ========================
 " === General Settings ===
 " ========================
+
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/colorscheme.vim
-
-

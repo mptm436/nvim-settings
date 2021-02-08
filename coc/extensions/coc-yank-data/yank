@@ -1,0 +1,63 @@
+0dec5f3a3c2c041f4a206ccf99bcfaf2|file:///home/mark/nvim-settings/nvim/init.vim|114|1|V|vim
+	" === asyncrun
+	source $HOME/.config/nvim/plug-configs/asyncrun.vim
+	" === csv
+	source $HOME/.config/nvim/plug-configs/csv.vim
+9c2de6ff4582cbd749fabed4ed21de6a|file:///home/mark/nvim-settings/nvim/vim-plugs/plugins.vim|49|1|V|vim
+	" asyncrun
+	Plug 'skywind3000/asyncrun.vim'
+	Plug 'skywind3000/asyncrun.extra'
+ac162dd198b93a0a946123950dd49ee2|file:///home/mark/nvim-settings/nvim/plug-configs/asyncrun.vim|1|1|V|vim
+	" let g:asyncrun_exit " script will be executed after finished
+	" let g:asyncrun_mode " 0:async(require vim 7.4.1829) 1:sync 2:shell
+	" let g:asyncrun_bell " non-zero to ring a bell after finished
+	let g:asyncrun_open = 6 " above zero to open quickfix window at given height after command starts
+	" let g:asyncrun_wrapper = '-raw python %' " enable to setup a command prefix
+	let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.hg', '.project'] " root markers which is used for locating project root
+	" let g:asyncrun_encs " set shell encoding if it's different from &encoding
+	" let g:asyncrun_trim " non-zero to trim the empty lines in the quickfix window.
+	" let g:asyncrun_auto " event name to trigger QuickFixCmdPre/QuickFixCmdPost
+	" let g:asyncrun_save " non-zero to save current(1) or all(2) modified buffer(s) before executing
+	" let g:asyncrun_timer " how many messages should be inserted into quickfix every 100ms interval
+	" let g:asyncrun_local " enable use local value of errorformat
+	" let g:asyncrun_shell " override the value of vim's shell option.
+	" let g:asyncrun_shellflag " override the value of vim's shellcmdflag option.
+	let g:asyncrun_status = "stopped"
+	augroup QuickfixStatus
+		au! BufWinEnter quickfix setlocal 
+			\ statusline=%t\ [%{g:asyncrun_status}]\ %{exists('w:quickfix_title')?\ '\ '.w:quickfix_title\ :\ ''}\ %=%-15(%l,%c%V%)\ %P
+	augroup END
+24bf89b8377a42892c4a13ca8bc40492|file:///home/mark/nvim-settings/nvim/plug-configs/csv.vim|1|1|V|vim
+	" define delimiter
+	let g:csv_default_delim=','
+	" delimiters are probed automatically
+	let g:csv_delim_test = ',;|'
+	" prevent mapping of <key>
+	let g:csv_nomap_space = 1
+	let g:csv_nomap_cr = 1
+e93a46caef530e81726841cc4e293aa8|file:///home/mark/nvim-settings/nvim/coc-settings.json|8|1|V|jsonc
+	  "python.analysis.autoImportCompletions": true,
+	  "python.analysis.autoSearchPaths": true,
+	  "python.analysis.diagnosticMode": "openFilesOnly",
+	  // "python.analysis.stubPath": "typings",
+	  // "python.analysis.typeshedPaths": [],
+	  // "python.analysis.diagnosticSeverityOverrides": {},
+	  "python.analysis.typeCheckingMode": "basic",
+	  "python.analysis.useLibraryCodeForTypes": true,
+	  "python.pythonPath": "python",
+	  "python.venvPath": "/home/mark/.local/share/virtualenvs/",
+	  "python.formatting.provider": "black",
+	  "python.formatting.blackPath": "black",
+	  // "python.sortImports.path": "",
+	  // "python.sortImports.args": [],
+	  "pyright.organizeimports.provider": "pyright",
+b81fe04bec4a626523406749fe19124e|file:///home/mark/nvim-settings/nvim/general/colorscheme.vim|30|1|V|vim
+	" asyncrun statusline
+	let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+980e84966fc23bd515688bc83b238cce|file:///home/mark/nvim-settings/nvim/keys/mappings.vim|100|1|V|vim
+	" run curren py script with asyncrun
+	noremap <LEADER>py :AsyncRun -raw python %<CR>
+	" run asyncrun with floaterm
+	noremap <LEADER>pt :AsyncRun -mode=term -pos=floaterm -position=bottomright 
+	" set encoding to gbk
+	noremap <LEADER>gbk :e ++enc=gbk<CR>

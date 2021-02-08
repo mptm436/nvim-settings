@@ -57,9 +57,6 @@ Plug 'wellle/tmux-complete.vim'
 " Undo Tree
 Plug 'mbbill/undotree/'
 
-" csv
-Plug 'chrisbra/csv.vim'
-
 " Other visual enhancement
 Plug 'itchyny/vim-cursorword' 
 
