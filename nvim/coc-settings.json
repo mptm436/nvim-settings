@@ -1,0 +1,43 @@
+{
+  // Pretter config
+  "coc.preferences.formatOnSaveFiletypes": [ "css", "markdown", "javascript", "graphql", "html", "yaml",  "json", "python", "go", "sh"],
+
+  // python config
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  // "python.analysis.stubPath": "typings",
+  // "python.analysis.typeshedPaths": [],
+  // "python.analysis.diagnosticSeverityOverrides": {},
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.useLibraryCodeForTypes": true,
+  "python.pythonPath": "python",
+  "python.venvPath": "/home/mark/.local/share/virtualenvs/",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "black",
+  // "python.sortImports.path": "",
+  // "python.sortImports.args": [],
+  "pyright.organizeimports.provider": "pyright",
+
+  "snippets.ultisnips.directories":
+  [
+    "UltiSnips",
+    "~/.config/nvim/utils/snips"
+  ],
+  
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  }
+}
